@@ -5,6 +5,7 @@ import About from './(1.0)/about/page'
 import './globals.css'
 import Contact from './(1.0)/contact/page'
 import Navbar from './components/Navbar'
+import OurTeam from './components/Team'
 
 export default function Home() {
   return (
@@ -32,7 +33,9 @@ export default function Home() {
         </div>
 
       </div>
+
       <About />
+      <OurTeam/>
       <Contact />
     </main>
     </div>
