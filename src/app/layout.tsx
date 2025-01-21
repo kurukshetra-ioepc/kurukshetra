@@ -1,8 +1,7 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Kurkshetra:1.0 - The Ultimate Robowar Showdown',
@@ -19,6 +18,7 @@ export default function RootLayout({
       <body>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   )

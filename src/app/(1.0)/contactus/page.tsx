@@ -1,6 +1,6 @@
 'use client'
 
-import { MapPin, Mail, Facebook, Instagram, Twitter } from 'lucide-react';
+import { MapPin, Mail, Facebook,  } from 'lucide-react';
 
 export default function Contact() {
     return (
