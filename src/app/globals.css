@@ -19,3 +19,87 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Orbital animations */
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  from {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes orbital-movement {
+  from {
+    transform: rotate(0deg) translateX(400px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(400px) rotate(-360deg);
+  }
+}
+
+@keyframes orbital-movement-reverse {
+  from {
+    transform: rotate(360deg) translateX(300px) rotate(-360deg);
+  }
+
+  to {
+    transform: rotate(0deg) translateX(300px) rotate(0deg);
+  }
+}
+
+@keyframes orbital-movement-slow {
+  from {
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg) translateX(200px) rotate(-360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 30s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-reverse 25s linear infinite;
+}
+
+.animate-orbit-slow {
+  animation: orbit 40s linear infinite;
+}
+
+.animate-orbital-movement {
+  animation: orbital-movement 20s linear infinite;
+}
+
+.animate-orbital-movement-reverse {
+  animation: orbital-movement-reverse 15s linear infinite;
+}
+
+.animate-orbital-movement-slow {
+  animation: orbital-movement-slow 25s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-pulse-slower {
+  animation: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

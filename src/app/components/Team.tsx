@@ -1,40 +1,50 @@
 "use client";
 
+import Image from "next/image";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 
 const teamMembers = [
   {
-    name: "Kadir Miye",
-    email: "kadir@uikit.com",
-    image: "/images/member1.png",
+    name: "Binam Sherstha",
+    email: "",
+    image: "/images/binam-shrestha.jpg",
     linkedin: "#",
     twitter: "#",
     github: "#",
   },
   {
-    name: "Isabella Thompson",
-    email: "isabella@uikit.com",
-    image: "/images/member2.png",
+    name: "Rohan Acharya",
+    email: "",
+    image: "/images/rohan-acharya.jpg",
     linkedin: "#",
     twitter: "#",
     github: "#",
   },
   {
-    name: "Zainab Rahman",
+    name: "Nabin Yadav",
+    email: "nabiny501@gmail.com",
+    image: "/images/Nabin yadav.jpg",
+    linkedin: "#",
+    twitter: "#",
+    github: "github.com/nabinyd",
+  },
+  {
+    name: "Sushant Niraula",
+    email: "sushantniraula01@gmail.com",
+    image: "/images/sushant-niraula.jpg",
+    linkedin: "#",
+    twitter: "#",
+    github: "#",
+  },
+  {
+    name: "Suman Khatri",
     email: "zainab@uikit.com",
-    image: "/images/member3.png",
+    image: "/images/suman-khatri.jpg",
     linkedin: "#",
     twitter: "#",
     github: "#",
   },
-  {
-    name: "Aiden Davis",
-    email: "aiden@uikit.com",
-    image: "/images/member4.png",
-    linkedin: "#",
-    twitter: "#",
-    github: "#",
-  },
+
 ];
 
 const OurTeam = () => {
@@ -55,10 +65,13 @@ const OurTeam = () => {
             >
               {/* Updated photo design */}
               <div className="w-full h-48 overflow-hidden">
-                <img
+                <Image
                   src={member.image}
                   alt={member.name}
                   className="w-full h-full object-cover transform transition-transform duration-500 ease-out hover:scale-110"
+                  // fill
+                  width={200}
+                  height={200}
                 />
               </div>
               <div className="p-6">
