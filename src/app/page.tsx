@@ -4,9 +4,13 @@ import { CTA } from './components/CTA'
 import About from './(1.0)/about/page'
 import './globals.css'
 import Contact from './(1.0)/contact/page'
+import Navbar from './components/Navbar'
+import OurTeam from './components/Team'
 
 export default function Home() {
   return (
+    <div>
+      <Navbar/>
     <main className="min-h-screen bg-gray-900 text-white overflow-hidden">
       <div className="relative h-screen flex flex-col justify-center items-center">
         {/* Background animation */}
@@ -29,8 +33,11 @@ export default function Home() {
         </div>
 
       </div>
+
       <About />
+      <OurTeam/>
       <Contact />
     </main>
+    </div>
   )
 }
