@@ -1,50 +1,69 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Our Team", path: "/ourteam" },
+  ];
+
   return (
-    <nav className="bg-gradient-to-r from-blue-500 to-red-500 text-white fixed top-0 left-0 w-full z-50 shadow-lg">
+    <nav className="bg-gradient-to-r from-gray-900 via-black to-gray-800 text-white fixed top-0 left-0 w-full z-50 shadow-lg">
       <div className="container mx-auto flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <div className="text-2xl font-bold cursor-pointer hover:scale-110 transition-transform duration-300">
+        <Link href="/" className="text-2xl font-bold text-cyan-400 cursor-pointer hover:text-cyan-300 transition-colors">
           Kurukshetra
-        </div>
+        </Link>
 
-        {/* Hamburger Menu Button */}
+        {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden flex flex-col items-center justify-center space-y-1 focus:outline-none"
+          className="md:hidden z-50"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
-          <span
-            className={`block w-6 h-0.5 bg-white transition-transform ${isMenuOpen ? "rotate-45 translate-y-2" : ""
-              }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-white transition-opacity ${isMenuOpen ? "opacity-0" : "opacity-100"
-              }`}
-          ></span>
-          <span
-            className={`block w-6 h-0.5 bg-white transition-transform ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""
-              }`}
-          ></span>
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
         {/* Navigation Links */}
         <ul
-          className={`md:flex md:items-center md:space-x-6 absolute md:static top-16 left-1/2 transform md:translate-x-0 -translate-x-1/2 md:bg-transparent bg-[#0a0d16]/80 backdrop-blur-md md:w-auto w-3/4 md:py-0 py-6 px-6 rounded-lg shadow-lg md:shadow-none transition-all duration-300 ${isMenuOpen ? "block" : "hidden"
-            }`}
+          className={`
+            fixed md:static top-0 right-0 w-64 md:w-auto h-full md:h-auto
+            bg-gray-900/95 md:bg-transparent
+            backdrop-blur-lg md:backdrop-blur-none
+            transform transition-transform duration-300 ease-in-out
+            md:flex md:items-center md:space-x-6
+            pt-20 md:pt-0 px-6 md:px-0
+            ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}
+            md:translate-x-0
+            absolute md:relative
+          `}
         >
-          {["Home", "About", "Our Team", "Contact Us"].map((item, index) => (
-            <li key={index} className="group">
+          {navLinks.map((link) => (
+            <li key={link.name} className="mb-6 md:mb-0">
               <Link
-                href={item === "Home" ? "/" : `/${item.toLowerCase().replace(" ", "")}`}
-                className="relative inline-block text-white font-medium px-4 py-2 rounded-md transition duration-300 hover:bg-white/10"
+                href={link.path}
+                onClick={() => setIsMenuOpen(false)}
+                className="
+                  block md:inline-block 
+                  text-gray-300 hover:text-cyan-400 
+                  transition-colors duration-300 
+                  relative group
+                "
               >
-                {item}
-                <span className="absolute left-0 bottom-0 w-0 h-1 bg-white transition-all duration-300 group-hover:w-full"></span>
+                {link.name}
+                <span
+                  className="
+                    absolute bottom-0 left-0 w-0 h-0.5 
+                    bg-cyan-400 
+                    group-hover:w-full 
+                    transition-all duration-300
+                  "
+                ></span>
               </Link>
             </li>
           ))}

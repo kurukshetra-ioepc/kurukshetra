@@ -3,9 +3,7 @@ import { Countdown } from './components/CountDown';
 import { CTA } from './components/CTA';
 import About from './(1.0)/about/page';
 import './globals.css';
-import Contact from './(1.0)/contactus/page';
 import OurTeam from './components/Team';
-import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -45,47 +43,23 @@ export default function Home() {
           {/* Hero content with enhanced typography */}
           <div className="z-10 text-center px-4 space-y-6">
             <div className="container mx-auto px-4 pt-8 relative z-10">
-              <div className="flex justify-center items-center gap-12 mb-12">
-                <div className="w-24 h-24 bg-white flex items-center justify-center">
-                  <Image
-                    src="/images/Group 70.png"
-                    alt="Delta Logo"
-                    width={80}
-                    height={80}
-                    className="object-cover"
-                  />
-                </div>
-                <div className="w-24 h-24  rounded-lg flex items-center justify-center  hover:bg-white/20 transition-all">
-                  <Image
-                    src="/images/fsu-logo.jpg"
-                    alt="FSU Logo"
-                    width={100}
-                    height={100}
-                    className="object-cover"
-                  />
-                </div>
-                <div className="w-24 h-24 bg-white rounded-lg flex items-center justify-center">
-                  <Image
-                    src="/images/campus-logo.png"
-                    alt="Campus Logo"
-                    width={80}
-                    height={80}
-                    className="object-cover"
-                  />
-                </div>
-              </div>
             </div>
             <h4 className="font-mono text-xl text-cyan-400 tracking-wider uppercase">
               Main Event
             </h4>
-            <h1 className="font-tech text-6xl md:text-8xl font-black mb-4 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-red-600 animate-gradient-x">
-              KURUKSHETRA:1.0
-            </h1>
+            <div className="flex flex-col items-center">
+              <h1 className="font-tech text-6xl md:text-8xl font-black mb-4 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-red-600 animate-gradient-x">
+                KURUKSHETRA
+              </h1>
+              <span className="font-tech text-4xl md:text-6xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r text-blue-300 animate-gradient-x">
+                1.0
+              </span>
+            </div>
             <p className="font-mono text-xl md:text-2xl mb-8 text-gray-300 tracking-wide">
               The Ultimate Robowar Showdown
             </p>
             <div className="glowing-container p-6 rounded-lg">
-              <Countdown targetDate="2025-01-30T23:59:59" />
+              <Countdown targetDate="2025-01-31T23:59:59" />
             </div>
             <CTA />
           </div>
@@ -99,7 +73,6 @@ export default function Home() {
           <About />
         </div>
         <OurTeam />
-        <Contact />
       </main>
     </div>
   );
