@@ -51,7 +51,7 @@ export default function Home() {
               <h1 className="font-tech text-6xl md:text-8xl font-black mb-4 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-red-600 animate-gradient-x">
                 KURUKSHETRA
               </h1>
-              <span className="font-tech text-4xl md:text-6xl font-black tracking-wider text-transparent bg-clip-text bg-gradient-to-r text-blue-300 animate-gradient-x">
+              <span className="font-tech text-6xl md:text-8xl font-black mb-4 tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-red-600 animate-gradient-x">
                 1.0
               </span>
             </div>
